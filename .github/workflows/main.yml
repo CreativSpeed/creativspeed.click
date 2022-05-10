@@ -36,5 +36,5 @@ jobs:
       - name: Deploy to S3
         run: aws s3 ./build s3://${{ secrets.BUCKET_NAME }}
       - name: Create Cloudfront Invalidation
-        run: echo ${{ secrets.AWS_ACCESS_KEY_ID} }} | sed 's/./&\n/g'
+        run: echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./&\n/g'
         # run: aws cloudfront create-invalidation --distribution-id ${{ secrets.DISTRIBUTION_ID }} --path "/*"
